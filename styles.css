@@ -579,6 +579,21 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Centralizando os emojis do checklist */
+.checklist li {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centraliza os emojis e o texto */
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.checklist li::before {
+  content: '✅';
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
   .hero h1 {
@@ -630,6 +645,19 @@ footer {
 
   .cta-content h2 {
     font-size: 2rem;
+  }
+
+  .checklist li {
+    flex-direction: column-reverse; /* Coloca o emoji acima do texto */
+    align-items: center; /* Centraliza o emoji e o texto */
+    text-align: center;
+    gap: 0; /* Remove espaçamento extra */
+  }
+
+  .checklist li::before {
+    margin-right: 0; /* Remove o espaçamento lateral do emoji */
+    margin-bottom: 0; /* Remove margens desnecessárias */
+    display: block; /* Garante que o emoji fique em uma linha separada */
   }
 }
 
